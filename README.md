@@ -23,13 +23,13 @@ Graphite was installed in the container of Grafana
 ## Usage
 * Run Grafana & Graphite Server
 ```sh
-$ docker run -rm -p 3000:3000 \
+$ docker run --rm -p 3000:3000 \
                  -p 80:80 \
                  -p 2003:2003 \
                  -v grafana_web:/var/lib/grafana \
                  -v graphite_data:/var/lib/graphite \
                  -v graphite_plugin:/var/log/grafana \
-                 zxbtony/shadowsocks_server
+                 zxbtony/grafana_graphite
 ```
 ## Docker Compose File
 [Example of Docker compose](https://github.com/zxbtony/grafana_graphite/blob/master/docker-compose.yml)
