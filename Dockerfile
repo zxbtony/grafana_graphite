@@ -6,8 +6,7 @@ ARG GRAFANA_VERSION
 COPY ./run.sh /run.sh
 
 RUN apt-get update && echo "no"|apt-get install --force-yes -y graphite-carbon
-RUN apt-get update && \
-    apt-get -y --no-install-recommends install libfontconfig curl ca-certificates apache2 libapache2-mod-wsgi&& \
+RUN apt-get -y --no-install-recommends install libfontconfig curl ca-certificates apache2 libapache2-mod-wsgi&& \
     apt-get -y install graphite-web && \
     apt-get clean && \
     curl https://grafanarel.s3.amazonaws.com/builds/grafana_3.1.1-1470047149_amd64.deb > /tmp/grafana.deb && \
