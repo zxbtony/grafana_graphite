@@ -32,7 +32,7 @@ $ docker run -rm -p 3000:3000 \
                  zxbtony/shadowsocks_server
 ```
 ##Docker Compose
-[Example of Docker compose](https://github.com/shadowsocks/)
+[Example of Docker compose](https://github.com/zxbtony/grafana_graphite/blob/master/docker-compose.yml)
 
 ### Acknowledgement
-[Shadowsocks](https://github.com/shadowsocks/shadowsocks/tree/master)
+[Grafana](https://github.com/grafana/grafana-docker)
