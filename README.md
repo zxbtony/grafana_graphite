@@ -34,5 +34,5 @@ $ docker run --rm -p 3000:3000 \
 ## Docker Compose File
 [Example of Docker compose](https://github.com/zxbtony/grafana_graphite/blob/master/docker-compose.yml)
 
-### Acknowledgement
+## Acknowledgement
 [Grafana](https://github.com/grafana/grafana-docker)
