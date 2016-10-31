@@ -3,7 +3,6 @@ MAINTAINER Tony Zhang
 
 ARG GRAFANA_VERSION
 
-RUN mkdir /configuration
 COPY ./run.sh /run.sh
 
 RUN apt-get update && echo "no"|apt-get install --force-yes -y graphite-carbon
