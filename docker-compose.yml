@@ -1,0 +1,19 @@
+version: '2'
+services:
+  graphite:
+    build: .
+    environment:
+      - GF_SERVER_ROOT_URL=$EXT_IP
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - graphite_data:/var/lib/graphite
+      - grafana_data:/var/lib/grafana
+      - grafana_plugin:/var/lib/grafana/plugins
+    ports:
+      - 3000:3000
+      - 80:80
+      - 2003:2003
+volumes:
+  graphite_data:
+  grafana_data:
+  grafana_plugin:
