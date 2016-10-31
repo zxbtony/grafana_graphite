@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-if [ "$1" = 'start_server']; then
+if [ "$1" = 'start_server' ] || [ "$#" == 0 ]; then
   : "${GF_PATHS_DATA:=/var/lib/grafana}"
   : "${GF_PATHS_LOGS:=/var/log/grafana}"
   : "${GF_PATHS_PLUGINS:=/var/lib/grafana/plugins}"
