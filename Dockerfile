@@ -15,6 +15,7 @@ RUN apt-get update && \
     rm /tmp/grafana.deb && \
     curl -L https://github.com/tianon/gosu/releases/download/1.7/gosu-amd64 > /usr/sbin/gosu && \
     chmod +x /usr/sbin/gosu && \
+    chmod +x /run.sh && \
     apt-get remove -y curl && \
     apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
