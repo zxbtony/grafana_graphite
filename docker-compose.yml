@@ -5,10 +5,12 @@ services:
     environment:
       - GF_SERVER_ROOT_URL=$EXT_IP
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - CARBON_CACHE_ENABLED=true
+      - ENABLE_LOGROTATION=true
     volumes:
       - graphite_data:/var/lib/graphite
       - grafana_data:/var/lib/grafana
-      - grafana_plugin:/var/lib/grafana/plugins
+      - grafana_log:/var/log/grafana
     ports:
       - 3000:3000
       - 80:80
@@ -16,4 +18,4 @@ services:
 volumes:
   graphite_data:
   grafana_data:
-  grafana_plugin:
+  grafana_log:
