@@ -2,20 +2,20 @@
 
 Graphite was installed in the container of Grafana
 
-##Environment Variable
-####CARBON_CACHE_ENABLED
+## Environment Variable
+#### CARBON_CACHE_ENABLED
   -Default=true
-####ENABLE_LOGROTATION
+#### ENABLE_LOGROTATION
   -Default = True
-####RETENTIONS
+#### RETENTIONS
   -Default = 5s:90d,30s:180d,1m:1y
 
-##Volumes
+## Volumes
 * Graphite Data: /var/lib/graphite
 * Grafana Data: /var/lib/grafana
 * Graphite log: /var/log/grafana
 
-##Ports
+## Ports
 * Grafana Web: 3000
 * Graphite Web: 80
 * Graphite Data Receiver: 2003
@@ -31,7 +31,7 @@ $ docker run -rm -p 3000:3000 \
                  -v graphite_plugin:/var/log/grafana \
                  zxbtony/shadowsocks_server
 ```
-##Docker Compose
+## Docker Compose File
 [Example of Docker compose](https://github.com/zxbtony/grafana_graphite/blob/master/docker-compose.yml)
 
 ### Acknowledgement
