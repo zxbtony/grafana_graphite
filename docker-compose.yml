@@ -1,7 +1,7 @@
 version: '2'
 services:
   graphite:
-    build: .
+    image: zxbtony/grafana_graphite
     environment:
       - GF_SERVER_ROOT_URL=$EXT_IP
       - GF_SECURITY_ADMIN_PASSWORD=admin
