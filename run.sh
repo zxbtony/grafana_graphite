@@ -74,17 +74,19 @@ if [ "$1" = 'start_server' ] || [ "$#" == 0 ]; then
   a2ensite apache2-graphite
 
   service apache2 start
-
+  
+  if [[ -z `curl -s 'http://admin:admin@localhost:3000/api/datasources' | grep graphite` ]];then
+        curl 'http://admin:admin@localhost:3000/api/datasources' -X POST -H 'Content-Type:application/json;charset=UTF-8' --data-binary '{"name":"Graphite","type":"graphite","url":"http://localhost","access":"proxy","isDefault":true,"jsonData":{}}'
+  fi
+  
   exec gosu grafana /usr/sbin/grafana-server  \
     --homepath=/usr/share/grafana             \
     --config=/etc/grafana/grafana.ini         \
     cfg:default.paths.data="$GF_PATHS_DATA"   \
     cfg:default.paths.logs="$GF_PATHS_LOGS"   \
     cfg:default.paths.plugins="$GF_PATHS_PLUGINS"
+
 fi
 
-if [[ -z `curl -s 'http://admin:admin@localhost:3000/api/datasources' | grep graphite` ]];then
-        curl 'http://admin:admin@localhost:3000/api/datasources' -X POST -H 'Content-Type:application/json;charset=UTF-8' --data-binary '{"name":"Graphite","type":"graphite","url":"http://localhost","access":"proxy","isDefault":true,"jsonData":{}}'
-fi
 
 exec "$@"
