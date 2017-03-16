@@ -4,6 +4,7 @@ MAINTAINER Tony Zhang
 ARG GRAFANA_VERSION
 
 COPY ./run.sh /run.sh
+COPY ./add_datasource.sh /add_datasource.sh
 
 RUN apt-get update && echo "no"|apt-get install --force-yes -y graphite-carbon
 RUN apt-get -y --no-install-recommends install libfontconfig curl ca-certificates apache2 libapache2-mod-wsgi&& \
