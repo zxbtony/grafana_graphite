@@ -75,9 +75,7 @@ if [ "$1" = 'start_server' ] || [ "$#" == 0 ]; then
 
   service apache2 start
   
-  if [[ -z `curl -s 'http://admin:admin@localhost:3000/api/datasources' | grep graphite` ]];then
-        curl 'http://admin:admin@localhost:3000/api/datasources' -X POST -H 'Content-Type:application/json;charset=UTF-8' --data-binary '{"name":"Graphite","type":"graphite","url":"http://localhost","access":"proxy","isDefault":true,"jsonData":{}}'
-  fi
+  sh /add_datasource.sh &
   
   exec gosu grafana /usr/sbin/grafana-server  \
     --homepath=/usr/share/grafana             \
