@@ -15,8 +15,6 @@ RUN apt-get -y --no-install-recommends install libfontconfig curl ca-certificate
     curl -L https://github.com/tianon/gosu/releases/download/1.7/gosu-amd64 > /usr/sbin/gosu && \
     chmod +x /usr/sbin/gosu && \
     chmod +x /run.sh && \
-    apt-get remove -y curl && \
-    apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
 #VOLUME ["/var/lib/grafana", "/var/lib/grafana/plugins", "/var/log/grafana", "/etc/grafana"]
